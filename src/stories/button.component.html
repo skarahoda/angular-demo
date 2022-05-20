@@ -1,0 +1,21 @@
+<button class="button-base button-{{ appearance }} size-{{ size }}"
+        [class.loading]="loading"
+        [disabled]="loading || disabled"
+        [type]="type"
+        [attr.id]="id"
+        [name]="name"
+        [attr.aria-haspopup]="trayTargetId ? 'dialog' : undefined"
+        [attr.aria-expanded]="trayTargetId ? 'false' : undefined"
+        [attr.aria-controls]="trayTargetId ? trayTargetId : undefined"
+        [attr.aria-describedby]="describedBy ? describedBy : undefined"
+        [attr.aria-labelledby]="labelledBy ? labelledBy : undefined"
+        (click)="pressed.emit()"
+        [attr.data-testid]="dataTestId"
+        #button>
+    <ng-container *ngIf="loading">
+        <div class="loader-overlay">
+            <div class="loader-circle"></div>
+        </div>
+    </ng-container>
+    <ng-content></ng-content>
+</button>
