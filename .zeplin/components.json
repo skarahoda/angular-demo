@@ -1,7 +1,11 @@
 {
   "plugins": [
     {
-      "name": "@zeplin/cli-connect-angular-plugin"
+      "name": "@zeplin/cli-connect-angular-plugin",
+      "config": {
+        "useFullSnippet": true,
+        "useFullDescription": true
+      }
     },
     {
       "name": "@zeplin/cli-connect-storybook-plugin",
